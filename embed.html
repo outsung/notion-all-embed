@@ -1,7 +1,7 @@
 <html>
   <head>
     <script type="text/javascript">
-      window.embedUri = window.location.search.split("&")[0].split("?tab=")[1];
+      window.embedUri = window.location.search.split("&")[0].split("?src=")[1];
       document.onload = () => {
         document.getElementById("iframe").setAttribute("src", window.embedUri);
       };
