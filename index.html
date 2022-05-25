@@ -2,9 +2,6 @@
   <head>
     <script type="text/javascript">
       window.embedUri = window.location.search.split("&")[0].split("?src=")[1];
-      window.addEventListener("load", function () {
-        document.getElementById("iframe").setAttribute("src", window.embedUri);
-      });
     </script>
   </head>
 
@@ -48,5 +45,8 @@
         &lt;/script&gt; &lt;/body&gt; &lt;/html&gt;</iframe
       >
     </div>
+    <script>
+      document.getElementById("iframe").setAttribute("src", window.embedUri);
+    </script>
   </body>
 </html>
