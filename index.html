@@ -5,12 +5,31 @@
     <script type="text/javascript">
       window.embedUri = window.location.search.split("&")[0].split("?src=")[1];
       window.addEventListener("load", function () {
-        document.getElementById("iframe").setAttribute("src", window.embedUri);
+        if (window.embedUri) {
+          document.getElementById("embedContainer").innerHTML = `
+            <iframe id="iframe" style="width: 100%; height: 100vh; border-width: 0" src="${window.embedUri}"></iframe>
+          `;
+        } else {
+          document.getElementById("embedContainer").innerHTML = `
+          <div
+            style="
+              width: 100%;
+              height: 100vh;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-direction: column;
+            "
+          >
+            <h1>${window.location.href}?src=[The url you want to embed]</h1>
+            <h3>ex)</h3>
+            <a href="${window.location.href}?src=https://github.com/outsung/notion-all-embed">${window.location.href}?src=https://github.com/outsung/notion-all-embed</a>
+          </div>
+          `;
+        }
       });
     </script>
 
-    <div style="position: relative" id="embedContainer">
-      <iframe id="iframe" style="width: 100%; height: 100vh"></iframe>
-    </div>
+    <div style="position: relative" id="embedContainer"></div>
   </body>
 </html>
