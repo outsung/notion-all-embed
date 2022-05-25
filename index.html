@@ -2,9 +2,9 @@
   <head>
     <script type="text/javascript">
       window.embedUri = window.location.search.split("&")[0].split("?tab=")[1];
-      document.onload(() => {
+      document.onload = () => {
         document.getElementById("iframe").setAttribute("src", window.embedUri);
-      });
+      };
     </script>
   </head>
 
