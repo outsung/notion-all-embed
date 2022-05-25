@@ -2,13 +2,13 @@
   <head>
     <script type="text/javascript">
       window.embedUri = window.location.search.split("&")[0].split("?src=")[1];
-      window.addEventListener("load", function (event) {
+      window.addEventListener("load", function () {
         document.getElementById("iframe").setAttribute("src", window.embedUri);
       });
     </script>
   </head>
 
-  <body id="bodyTag">
+  <body style="margin: 0" id="bodyTag">
     <div style="position: relative" id="embedContainer">
       <div style="position: absolute; top: 0; right: 0; z-index: 100">
         <style>
